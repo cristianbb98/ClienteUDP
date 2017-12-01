@@ -11,7 +11,8 @@ public class ServidorUDP {
 
         DatagramSocket serverSocket = new DatagramSocket(PORT);
         System.err.println("Server listening on port " + PORT + " using UDP conection\n");
-        //medir tiempo del programa
+      
+        //Medir tiempo del programa
         long initialTime = System.currentTimeMillis();
         System.out.println("Tiempo inicial: " + initialTime + "\n");
 
@@ -20,7 +21,8 @@ public class ServidorUDP {
                 byte bufferRecieve[] = new byte[128];
                 DatagramPacket receivePacket = new DatagramPacket(bufferRecieve, bufferRecieve.length);
                 serverSocket.receive(receivePacket);
-                // información del puerto del cliente
+               
+                // Información del puerto del cliente
                 InetAddress clientAdress = receivePacket.getAddress();
                 int clientPort = receivePacket.getPort();
                 System.out.println("Client port: " + clientPort + "\n");
